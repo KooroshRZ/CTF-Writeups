@@ -37,8 +37,8 @@ No need to check every 2 pairs. here are the required steps for better and faste
 
 1. For every x read whole numbers, if they are greater than x ignore them.
 2. Subtract whole numbers from x and keep the results in a new list.
-3. Intersecrt the new list with the old list to see which resulsts are same
-4. because we have redundant numbers caculate `size of the new list / 2` and thats the answer
+3. Intersect the new list with the old list to see which results are same
+4. because we have redundant numbers, Caculate `size of the new list / 2` and thats the answer
 
 ```python
 def intersection(lst1, lst2):
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     print("The flag is", get_flag(res))
 ```
 
-And here is the result after less than a minute which is realy fast for this numbers
+And here is the result after less than a minute which is fast enough for this numbers
 ```
 The flag is TMUCTF{r4nd0m_fl46_f0r_fun!_SzC!$JvnbrRh6kc*1@L!4vMueH1k0xKPJem@vh6Y2&Sb2CJzwjnTfU6wVZyePOK3}
 ```
