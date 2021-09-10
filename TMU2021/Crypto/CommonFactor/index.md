@@ -45,7 +45,7 @@ v1 = primes[2]**2 + primes[1]*primes[2] + (primes[1]**2)*primes[2] + primes[1]*(
 v2 = (primes[2]**2)*primes[3] + primes[2]**2 + primes[1]*primes[2]*primes[3] + primes[1]*primes[2] - 2
 ```
 
-We know that `n` and `v1` both are divisible by `primes[2]` so we can calculate Greatest COmmon Factor of `n` and `v1` `gcd(v1,n)` to find `primes[2]`
+We know that `n` and `v1` both are divisible by `primes[2]` so we can calculate Greatest Common Factor of `n` and `v1` `gcd(v1,n)` to find `primes[2]`
 ```python
 # p2
 p2 = gcd(n, v1)
@@ -53,7 +53,7 @@ if n % p2 == 0: # confirm for correct p2 value
 	print(p2)
 ```
 
-then by having `primes[2]` and `v1` we can calculate `p1` with 2 degree equations solves
+Then by having `primes[2]` and `v1` we can calculate `p1` with 2 degree equations solves
 ```
 # p1
 a1 = p2
