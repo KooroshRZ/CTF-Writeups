@@ -1,0 +1,98 @@
+{
+  "main": {
+    "id": "5d5071f7e304399d",
+    "type": "split",
+    "children": [
+      {
+        "id": "ec9342f8c36cfe6f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "TMU2021/Crypto/SignedFlag.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e3a9444265e8ac08",
+    "type": "split",
+    "children": [
+      {
+        "id": "c1fbcafc49091c1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9129340204712b44",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ff020d801ffc5941",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "67297bf110dca265",
+    "type": "split",
+    "children": [
+      {
+        "id": "4f01dec18a1a1285",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bc42a7bc7a0f5be6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "TMU2021/Crypto/SignedFlag.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "ec9342f8c36cfe6f",
+  "lastOpenFiles": [
+    "TMU2021/Crypto/Untitled.md",
+    "TMU2021/Crypto/CommonFactor.md",
+    "TMU2021/Crypto/435!.md",
+    "TMU2021/Misc/TooMuch.md",
+    "Untitled.md",
+    "TMU2021/misc/Untitled.md"
+  ]
+}
