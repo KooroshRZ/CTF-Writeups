@@ -52,7 +52,7 @@ with open('/home/kourosh/CTF/TMU/crypto/BabyEncoder/flag', 'rb') as f:
 
 # Solution
 
-This challenge really blowed my mind :')
+This challenge really blowed my mind :')\
 It has 4 custom encoding parts which are like below
 
 ## step 1
@@ -88,7 +88,7 @@ def decode3(data):
 ```
 
 ## step 2
-This step `xor` every byte of the previous steps output with ist mirror bytes `(0 with n-1)(1 with n-2)` and ...
+This step `xor` every byte of the previous steps output with its mirror bytes `(0 with n-1)(1 with n-2)` and ...
 ```python
 for i in range(n):
 	encoded_flag[i] ^= encoded_flag[n - i - 1]
@@ -157,7 +157,7 @@ for i in range(1, n):
 		encoded_flag = displace(encoded_flag, i)
 ```
 
-Actually I didn't realize what this function does actually (LOL) because I had limited time to put on it to understand\
+Actually I didn't realize what this function really does (LOL) because I had limited time to put on it to understand\
 But the thing I know is that it just changes bytes positions without any change in bytes values.\
 As I saw in previous CTFs These functions usually reaches the same state if we repeat them\
 So I used the same function with try and error numbers to find exact iteration number
@@ -339,7 +339,7 @@ flag = ''.join(chr(test3[i]) for i in range(size))
 print(flag)
 ```
 
-Here is the outpu and the flag
+Here is the output and the flag
 ```text
 [128, 45, 131, 170, 99, 103, 183, 126, 115, 88, 91, 3, 63, 137, 92, 148, 94, 68, 162, 82, 84, 148, 142, 184, 130, 141, 111, 161, 227, 166, 105, 76, 107, 169, 122, 171, 68, 145, 91, 6, 111, 105, 214, 213, 213, 153, 144, 143, 115, 195, 134, 111, 101, 198, 155, 110, 53, 215, 193, 198, 180, 169, 179, 96, 106, 176, 234, 199, 181, 163, 136, 149, 41, 45, 40, 49, 66, 65]
 [107, 21, 24, 87, 83, 16, 86, 97, 29, 0, 88, 3, 9, 54, 83, 61, 87, 7, 82, 80, 2, 95, 53, 89, 50, 80, 61, 50, 111, 116, 68, 37, 39, 109, 60, 62, 7, 61, 84, 0, 6, 105, 107, 107, 106, 76, 77, 67, 27, 88, 107, 104, 7, 94, 49, 106, 4, 110, 105, 88, 95, 85, 84, 83, 13, 93, 108, 126, 73, 88, 75, 61, 18, 23, 22, 24, 25, 41]
