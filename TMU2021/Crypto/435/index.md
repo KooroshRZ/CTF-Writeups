@@ -1,5 +1,5 @@
 # 435!
-Here is th challenge code and Description
+Here is the challenge code and Description
 
 ```
 I have an encrypted message and the corresponding secret key, but some of their characters are missing. Can you help me find the flag?
@@ -118,14 +118,14 @@ def brute_key():
         key = "".join(tlist1)
 ```
 
-Here is the resul we got one key
+Here is the result, we got a key
 ```
 key = '0XhN2!8d%8Slp3Ov'
 ```
 
 
 ## Decrypt previous block
-Now we should repeat the steps we did for last block untl we reach first block and find `IV` which is our flag
+Now we should repeat the steps we did for last block until we reach first block and find `IV` which is our flag
 ```python
 def find_IV():
     key = "0XhN2!8d%8Slp3Ov"
@@ -151,7 +151,7 @@ def find_IV():
         print(cipher)
 ```
 
-And here is the reullt The last Line is `IV` and actually the flag !!
+And here is the result, The last Line is `IV` and actually the flag !!
 ```
 0x1f3ef3fab2bbfc838b9ef71867c3bcbb
 b'\x9c\x1a\x9d\x16y\\\x1b3Mn\xc4\x9fC\xfdf4'
