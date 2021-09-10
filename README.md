@@ -3,14 +3,14 @@
 ## TMU2021
 
 ###  Crypto
-[Common Factor](https://kooroshrz.github.io/CTF-Writeups/Crypto/CommonFactor/)\
-[435!](https://kooroshrz.github.io/CTF-Writeups/Crypto/435/)\
-[Baby Encoder](https://kooroshrz.github.io/CTF-Writeups/Crypto/BabyEncoder)\
-[Signed Flag](https://kooroshrz.github.io/CTF-Writeups/Crypto/SignedFlag/)
+[Common Factor](TMU2021/Crypto/CommonFactor/)\
+[435!](TMU2021/Crypto/435/)\
+[Baby Encoder](TMU2021/Crypto/BabyEncoder)\
+[Signed Flag](TMU2021/Crypto/SignedFlag/)
 
 
 ###  Misc
-[Too Much](https://kooroshrz.github.io/CTF-Writeups/Misc/TooMuch/)
+[Too Much](TMU2021/Misc/TooMuch/)
 
 
 
