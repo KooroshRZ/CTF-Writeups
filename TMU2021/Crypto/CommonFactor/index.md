@@ -89,3 +89,5 @@ flag: b'TMUCTF{Y35!!!__M4Y_N0t_4lW4y5_N33d_4ll_p21M3_f4c70R5}'
 ```
 
 [solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Crypto/CommonFactor/solve.py)
+<br>
+> KouroshRZ for **AbyssalCruelty**

@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
 No need to check every 2 pairs. here are the required steps for better and faster solution
 
-1. For every x read whole numbers, if they are greater than x ignore them.
+1. For every `x` read whole numbers, if they are greater than `x` ignore them.
 2. Subtract whole numbers from x and keep the results in a new list.
 3. Intersect the new list with the old list to see which results are same
 4. because we have redundant numbers, Caculate `size of the new list / 2` and thats the answer
@@ -98,3 +98,5 @@ The flag is TMUCTF{r4nd0m_fl46_f0r_fun!_SzC!$JvnbrRh6kc*1@L!4vMueH1k0xKPJem@vh6Y
 ```
 
 [solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Misc/TooMuch/solve.py)
+<br>
+> KouroshRZ for **AbyssalCruelty**

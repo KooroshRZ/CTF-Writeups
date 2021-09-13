@@ -172,3 +172,5 @@ Flag : TMUCTF{Y0U_D3CrYP73D_17}
 ```
 
 [solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Crypto/435/solve.py)
+<br>
+> KouroshRZ for **AbyssalCruelty**
