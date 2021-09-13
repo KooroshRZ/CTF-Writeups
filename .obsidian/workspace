@@ -7,8 +7,11 @@
         "id": "ec9342f8c36cfe6f",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "TMU2021/Crypto/435/index.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "TMU2021/Crypto/435/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,6 +88,8 @@
   },
   "active": "ec9342f8c36cfe6f",
   "lastOpenFiles": [
+    "TMU2021/Crypto/435/index.md",
+    "TMU2021/Crypto/CommonFactor/index.md",
     "TMU2021/Crypto/Untitled.md",
     "TMU2021/Crypto/CommonFactor.md",
     "TMU2021/Crypto/435!.md",
