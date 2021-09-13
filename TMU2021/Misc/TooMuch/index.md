@@ -96,3 +96,5 @@ And here is the result after less than a minute which is fast enough for this nu
 ```
 The flag is TMUCTF{r4nd0m_fl46_f0r_fun!_SzC!$JvnbrRh6kc*1@L!4vMueH1k0xKPJem@vh6Y2&Sb2CJzwjnTfU6wVZyePOK3}
 ```
+
+[solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Misc/TooMuch/solve.py)

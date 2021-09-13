@@ -216,3 +216,5 @@ The flag:
 ```
 Flag : TMUCTF{7h15_w45_my_m1574k3__1_f0r607_7h47_1_5h0uld_n3v3r_516n_mul71pl3_m3554635_w17h_4_dupl1c473_k3y!!!}
 ```
+
+[solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Crypto/SignedFlag/solve.py)

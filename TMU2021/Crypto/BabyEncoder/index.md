@@ -351,3 +351,5 @@ TMUCTF{0h!_3nc0d1n6_15_n07_4lw4y5_4_600d_1d34_70_h1d3_7h3_fl46__d0_y0u_46r33?}
 ```
 Flag : TMUCTF{0h!_3nc0d1n6_15_n07_4lw4y5_4_600d_1d34_70_h1d3_7h3_fl46__d0_y0u_46r33?}
 ```
+
+[solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/TMU2021/Crypto/BabyEncoder/solve.py)
