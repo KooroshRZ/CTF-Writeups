@@ -95,7 +95,7 @@ if name == "main":
 # Solution
 It's all about digital signature DSA Algorithm\
 We have 10 steps and each step produce new domain parameters and keys\
-Each step produce 2 random messages and a random secret and shares the messages and their `s` signatures ans also `s,r` signature of the secret and asks for the secret
+Each step produce 2 random messages and a random secret and shares the messages and their `s` signatures and also `s,r` signature of the secret and asks for the secret
 
 because single `k` is used for message signing we can use `shared k` attack to recover `k` and then the `known k` attack to recover the private key after that we can compute the value of secret
 
@@ -140,7 +140,7 @@ while True:
 According to this [link](https://ctf-wiki.mahaloz.re/crypto/signature/dsa/)
 1. First we recover `k` from two signatures
 2. Then we recover `x` which is private key
-3. Finally we recover `m` which is that hash value of the `secret` which the server expect from us
+3. Finally we recover `m` which is the hash value of the `secret` which the server expect from us
 
 ```python
 hm1 = int(sha1(m1.encode('utf-8')).hexdigest(), 16)
