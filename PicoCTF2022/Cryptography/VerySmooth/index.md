@@ -108,7 +108,7 @@ c = 1f511af6dd19a480eb16415a54c122d7485de4d933e0aeee6e9b5598a8e338c2b29583aee80c
 
 # Code Analysis
 
-First of all let's analyze the challenge code\
+First of all let's analyze the challenge code.\
 This section will produce two factors `(p,q)` for key generation.
 
 ```py
@@ -126,10 +126,10 @@ while True:
 ```
 
 These 2 functions will generate a prime number with these conditions:
-1. The `get_smooth_prime(STATE, 1024, 16)` function will generate a 16bit-smooth number
+1. The `get_smooth_prime(STATE, 1024, 16)` function will generate a `16bit-smooth` number.
 2. Acording to this [link](https://en.wikipedia.org/wiki/Smooth_number), an `n-smooth` number is an integer whose prime factors are all less than or equal to n.
-3. Regarding above definition, the output of `get_smooth_prime` will be a prime number which `p-1` is an `65536-smooth` number. that means all prime factors of the `p-1` will be less than `65536` and there is also no duplicate of any prime factors.
-4. The `get_smooth_prime(STATE, 1024, 17)` will be called again for second prime factor(q) which `q-1` is a `17bit-smooth` number `(131072-smooth)`
+3. Regarding above definition, the output of `get_smooth_prime` will be a prime number which `p-1` is an `65536-smooth` number. that means all prime factors of the `p-1` will be less than `65536` and there is also no duplicate factors.
+4. The `get_smooth_prime(STATE, 1024, 17)` will be called again for second prime factor `(q)` which `q-1` is a `17bit-smooth` number `(131072-smooth)`
 
 ```py
 def get_prime(state, bits):
@@ -175,8 +175,8 @@ So Let's search `pollard` and `smooth number` keywords
 
 # Solution
 
-We wanna factor `n` and recover `p,q` then `d` and decrypt the ciphertext `c`\
-After searching about `pollard` and `smooth number` keywords, I found [Pollard's p−1] algorithm(https://en.wikipedia.org/wiki/Pollard%27s_p_%E2%88%92_1_algorithm)\
+We wanna factor `n` and recover `p,q` then `d` and decrypt the ciphertext `c`.\
+After searching about `pollard` and `smooth number` keywords, I found [Pollard's p−1](https://en.wikipedia.org/wiki/Pollard%27s_p_%E2%88%92_1_algorithm) algorithm.\
 As we see, it's an integer factorization algorithm which can be applied for those numbers whose prime factors(`p-1`) are `powersmooth`\
 By definition 
 ```
@@ -296,6 +296,6 @@ Here is the flag
 picoCTF{7c8625a1}
 ```
 
-[solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/PicoCTF2022/Crypto/VerySmooth/solve.py)
+[solution code](https://github.com/KooroshRZ/CTF-Writeups/blob/main/PicoCTF2022/Cryptography/VerySmooth/solve.py)
 <br>
 > KouroshRZ for **Evento**

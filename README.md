@@ -14,5 +14,5 @@
 
 ## PicoCTF2022 (Team Evento)
 ### Cryptography
-[Very Smooth](PicoCTF2022/Cryptography/VerySmooth/)\
+[Very Smooth](PicoCTF2022/Cryptography/VerySmooth/)
 
