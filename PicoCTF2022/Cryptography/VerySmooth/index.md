@@ -108,7 +108,7 @@ c = 1f511af6dd19a480eb16415a54c122d7485de4d933e0aeee6e9b5598a8e338c2b29583aee80c
 
 # Code Analysis
 
-First of all let's analyze the challenge code.\
+First of all, let's analyze the challenge code.\
 This section will produce two factors `(p,q)` for key generation.
 
 ```py
@@ -127,9 +127,9 @@ while True:
 
 These 2 functions will generate a prime number with these conditions:
 1. The `get_smooth_prime(STATE, 1024, 16)` function will generate a `16bit-smooth` number.
-2. Acording to this [link](https://en.wikipedia.org/wiki/Smooth_number), an `n-smooth` number is an integer whose prime factors are all less than or equal to n.
-3. Regarding above definition, the output of `get_smooth_prime` will be a prime number which `p-1` is an `65536-smooth` number. that means all prime factors of the `p-1` will be less than `65536` and there is also no duplicate factors.
-4. The `get_smooth_prime(STATE, 1024, 17)` will be called again for second prime factor `(q)` which `q-1` is a `17bit-smooth` number `(131072-smooth)`
+2. According to this [link](https://en.wikipedia.org/wiki/Smooth_number), an `n-smooth` number is an integer whose prime factors are all less than or equal to n.
+3. Regarding the above definition, the output of `get_smooth_prime` will be a prime number which `p-1` is a `65536-smooth` number. that means all prime factors of the `p-1` will be less than `65536` and there is also no duplicate factors.
+4. The `get_smooth_prime(STATE, 1024, 17)` will be called again for the second prime factor `(q)` which `q-1` is a `17bit-smooth` number `(131072-smooth)`
 
 ```py
 def get_prime(state, bits):
@@ -164,7 +164,7 @@ def get_smooth_prime(state, bits, smoothness=16):
     p_factors.sort()
 ```
 
-After investigating overall code, it will generate primes `p,q` which `p-1` and `q-1` are both `16bit and 17bit smooth` numbers which means all of `p-1` factors are less than `2**16` or `65536` and all of `q-1` factors are less than `2**17` or `131072`.
+After investigating the overall code, it will generate primes `p,q` which `p-1` and `q-1` are both `16bit and 17bit smooth` numbers which means all of the `p-1` factors are less than `2**16` or `65536` and all of the `q-1` factors are less than `2**17` or `131072`.
 
 Here is the hint picoCTF offered:
 ```
@@ -177,7 +177,7 @@ So Let's search `pollard` and `smooth number` keywords
 
 We wanna factor `n` and recover `p,q` then `d` and decrypt the ciphertext `c`.\
 After searching about `pollard` and `smooth number` keywords, I found [Pollard's p−1](https://en.wikipedia.org/wiki/Pollard%27s_p_%E2%88%92_1_algorithm) algorithm.\
-As we see, it's an integer factorization algorithm which can be applied for those numbers whose prime factors(`p-1`) are `powersmooth`\
+As we see, it's an integer factorization algorithm that can be applied for those numbers whose prime factors(`p-1`) are `power-smooth`\
 By definition 
 ```
 Further, m is called B-powersmooth (or B-ultrafriable) if all prime powers p**v dividing m satisfy:
@@ -185,11 +185,11 @@ Further, m is called B-powersmooth (or B-ultrafriable) if all prime powers p**v 
 p**v <= B
 ```
 
-Here we can use `Pollard's p − 1` algorithm, because our integer `n`'s factor `p` is `65536-powersmooth` and factor `q` is `131072-powersmooth` which satisfy our conditions.
+Here we can use `Pollard's p − 1` algorithm because our integer `n`'s factor `p` is `65536-powersmooth` and factor `q` is `131072-powersmooth` which satisfies our conditions.
 
 ## Pollard's p − 1 Algorithm
 
-Here is the overall steps:
+Here are the overall steps:
 
 1. select a smoothness bound `B` (we should use 65535)
 2. choose a random base `a` coprime to `n`
@@ -226,7 +226,7 @@ B = k*(p-1)
 gcd((a**B)-1, n) = p
 ```
 
-If we can calculate `B` and choose any integer `a` co-prime to `n`(2 is best choice), then we can find `p` with `gcd` operation. simple huh?! But how to find `B`\
+If we can calculate `B` and choose any integer `a` co-prime to `n`(2 is the best choice), then we can find `p` with `gcd` operation. simple huh?! But how to find `B`\
 We know that:
 ```
 B = k*(p-1)
@@ -284,14 +284,14 @@ while True:
 
 ```
 
-After running above code we recovered `p,q` and decrypted the flag:
+After running the above code we recovered `p,q` and decrypted the flag:
 ```bash
 ~/CTF/picoctf2022/Crypto/VerySmooth  python3.9 solve.py
 [+] p factor : 159652342260602436611264882107764540496206777532515381978886917602247902747922672308128228056532167311635408138845484288179466203049041882723045592330122232567342518194630068422135188545880928509542459095514667379085548962076958641693004621121073173222707331672786582779407036356311260724097659870075337003627
 [+] q factor : 155886972960664534013041814351782927840465950022742711153704061512767231252254923859358385447688708709761645561788434482490726299524712681978677060822069411804436435368518028882769406676617745559724738774782701625211779174370759988895228070938831967483401953816901269670197361506466713077188578114638897325343
 b'picoCTF{7c8625a1}'
 ```
-Here is the flag
+Here is the flag:
 ```
 picoCTF{7c8625a1}
 ```
