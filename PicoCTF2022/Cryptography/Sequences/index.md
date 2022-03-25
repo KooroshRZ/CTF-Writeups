@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
 # Code Analysis
 As we see there is a recursive functions which for every step it uses its 4 previous steps\
-As we see from the comment it will overflow the stack because the input `20000000` is too large
+And from the comment it will overflow the stack because the input `20000000` is too large.
 ```
 # This will overflow the stack, it will need to be significantly optimized in order to get the answer :)
 ```
@@ -70,18 +70,18 @@ Traceback (most recent call last):
 RecursionError: maximum recursion depth exceeded
 ```
 
-So we need to optimize the recursive function to find the `m_func(20000000)`
+So we need to optimize the recursive function to find the `m_func(20000000)`.
 
 # Failed solution tries
 The first approach I chose to optimize the function was dynamic programming\
-According to [this link](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) There are two methods to implement it inside code
+According to [this link](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) There are two methods to implement it.
 ## Top-down with Memoization
-This method is used for optimizing recursive functions to avoid duplicate functions calls\
+This method is used for optimizing recursive functions to avoid duplicate functions calls.\
 In this approach, we try to solve the bigger problem by recursively finding the solution to smaller sub-problems. Whenever we solve a sub-problem, we cache its result so that we don’t end up solving it repeatedly if it’s called multiple times. Instead, we can just return the saved result. This technique of storing the results of already solved subproblems is called **Memoization**.[1](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0#Top-down-with-Memoization)
-
+<br>
 But just storing values and starting from `20000000` won't e enough because before reaching `m_func(0), m_func(1), m_func(2), m_func(3)` the stack will overflow and exit the program.\
 So I started from starting from `m_func(4)` and increase the `i` inside `m_func(i)` for each level and store the returned value `f(4)=x, f(5)=y, ...`. But because of massive increments in return values for higher inputs `100,1000,...` tha amount of RAM to handle this memoization program will huge and we're not capable of doing that(I also tried storing values on hard drive and strt the program again but it was toooo slow)
-
+<br>
 Here is the example code is used for memoization but it failed because of slow speed and large amount of ram it needed for storing values(storing on hard disk also didn't work becuase of low speed on higher values)
 ```py
 import functools
@@ -209,7 +209,7 @@ f(n) =	_________________________________________________________________________
 									              11639628
 ```
 
-And here is the refined function with direct solution
+And here is the refined function with direct solution:
 ```py
 import hashlib
 import sys
