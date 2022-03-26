@@ -202,7 +202,7 @@ f(n) = 2**n - 1 (Easy Huh?! But how to extract this function)
 ```
 
 To solve these linear recurrence functions you can study this [PDF](https://www.math.cmu.edu/~af1p/Teaching/Combinatorics/Slides/Generating-Functions.pdf)\
-But fortunately, wolfram has automated linear recurrence function solving platform which will extract this function [automatically](https://www.wolframalpha.com/input?i=f%28n%29%3D55692*f%28n-4%29+-+9549*f%28n-3%29+++301*f%28n-2%29+++21*f%28n-1%29%2C+f%281%29%3D1%2C+f%282%29%3D2%2C+f%283%29%3D3%2C+f%284%29%3D4)\
+But fortunately, wolfram has automated linear recurrence function solving platform which will extract this function [automatically](https://www.wolframalpha.com/input?i=f%28n%29%3D55692*f%28n-4%29-9549*f%28n-3%29%2B301*f%28n-2%29%2B21*f%28n-1%29%2C+f%281%29%3D1%2C+f%282%29%3D2%2C+f%283%29%3D3%2C+f%284%29%3D4)\
 And here is the direct solution to our linear recurrence function:
 ```
          (-20956*(-21)**n) + 2792335*2**(2*n + 3)*(3**n) - (22739409*13**n) + (2279277*17**n)
