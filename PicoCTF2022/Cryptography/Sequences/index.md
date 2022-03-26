@@ -207,7 +207,7 @@ And here is the direct solution to our linear recurrence function:
 ```
          (-20956*(-21)**n) + 2792335*2**(2*n + 3)*(3**n) - (22739409*13**n) + (2279277*17**n)
 f(n) =	______________________________________________________________________________________
-									              11639628
+		                                  11639628
 ```
 
 And here is the refined function with a direct solution:
