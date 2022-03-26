@@ -50,8 +50,8 @@ if __name__ == "__main__":
 ```
 
 # Code Analysis
-As we see there is a recursive functions which for every step it uses its 4 previous steps\
-And from the comment it will overflow the stack because the input `20000000` is too large.
+As we see there is a recursive function that for every step it uses its 4 previous steps.\
+And from the comment, it will overflow the stack because the input 20000000 is too large.
 ```
 # This will overflow the stack, it will need to be significantly optimized in order to get the answer :)
 ```
@@ -74,15 +74,16 @@ So we need to optimize the recursive function to find the `m_func(20000000)`.
 
 # Failed solution tries
 The first approach I chose to optimize the function was dynamic programming\
-According to [this link](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0) There are two methods to implement it.
+According to [this link](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0), There are two methods to implement it.
 ## Top-down with Memoization
 This method is used for optimizing recursive functions to avoid duplicate functions calls.\
 In this approach, we try to solve the bigger problem by recursively finding the solution to smaller sub-problems. Whenever we solve a sub-problem, we cache its result so that we don’t end up solving it repeatedly if it’s called multiple times. Instead, we can just return the saved result. This technique of storing the results of already solved subproblems is called **Memoization**.[1](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0#Top-down-with-Memoization)
 <br>
 But just storing values and starting from `20000000` won't e enough because before reaching `m_func(0), m_func(1), m_func(2), m_func(3)` the stack will overflow and exit the program.\
-So I started from starting from `m_func(4)` and increase the `i` inside `m_func(i)` for each level and store the returned value `f(4)=x, f(5)=y, ...`. But because of massive increments in return values for higher inputs `100,1000,...` tha amount of RAM to handle this memoization program will huge and we're not capable of doing that(I also tried storing values on hard drive and strt the program again but it was toooo slow)
+So I started from m_func(4) and increasing i inside m_func(i) for each level and store the returned value f(4)=x, f(5)=y, .... But because of massive increments in return values for higher inputs 100,1000,... the amount of RAM to handle this memoization program will be huge and we’re not capable of doing that(I also tried storing values on the hard drive and starting the program again but it was too slow)
+
 <br>
-Here is the example code is used for memoization but it failed because of slow speed and large amount of ram it needed for storing values(storing on hard disk also didn't work becuase of low speed on higher values)
+Here is the example code is used for memoization but it failed because of slow speed and a large amount of ram it needed for storing values(storing on hard disk also didn’t work because of low speed on higher values)
 ```py
 import functools
 
@@ -117,9 +118,10 @@ for k in values:
 ## Bottom-up with Tabulation
 Tabulation is the opposite of the top-down approach and avoids recursion. In this approach, we solve the problem “bottom-up” (i.e. by solving all the related sub-problems first). This is typically done by filling up an n-dimensional table. Based on the results in the table, the solution to the top/original problem is then computed.[2](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/m2G1pAq0OO0#Bottom-up-with-Tabulation)
 <br>
-I also tried Tabulation which start from `0` and solve and calculate lower values withour recursively calling the function and go upwards. This method solved the RAM problem but it was also very slow which I ran it for about 48 hours and it didn't reach `20000000` which is our needed value so this method failed too.\
-Here is the example code is used for Tabulation.\
-This method will reach the solution and fixed RAM and stack problem but it will take tooo long.
+I also tried Tabulation which starts from 0 and solves and calculates lower values without recursively calling the function and going upwards. This method solved the RAM problem but it was also very slow which I ran it for about 48 hours and it didn’t reach 20000000 which is our needed value so this method failed too.
+
+Here is the example code I used for Tabulation.
+This method will reach the solution and also it fixed RAM and stack problem, but it will take too long.
 ```py
 import functools
 from collections import deque
@@ -146,14 +148,14 @@ result = m_func(ITERS)
 
 
 # Main and Optimum Solution
-After a couple of days failing I heard from a friend that there are ways to solve recursive functions with generating functinos of sequences. I searched and studied a lot about them and found some useful resources.
+After a couple of days of failing, I heard from a friend that there are ways to solve recursive functions by generating functions of sequences. I searched and studied a lot about them and found some useful resources.
 <br>
 [Generating functions](https://en.wikipedia.org/wiki/Generating_function): In [mathematics](https://en.wikipedia.org/wiki/Mathematics "Mathematics"), a **generating function** is a way of encoding an [infinite sequence](https://en.wikipedia.org/wiki/Infinite_sequence "Infinite sequence") of numbers (`an`) by treating them as the [coefficients](https://en.wikipedia.org/wiki/Coefficient "Coefficient") of a [formal power series](https://en.wikipedia.org/wiki/Formal_power_series "Formal power series"). This series is called the generating function of the sequence.
-By generating functions we can calculate coefficients of specific element of sequence `an` which is actually `f(n)`.
+By generating functions we can calculate the coefficient of a specific element of sequence `an` which is actually `f(n)`.
 Actually we have linear recurrence function and after further studies I realized that we can also solve these functions with generating functions and find `f(20000000)` which is what we want
 <br>
-I used wolfram engine for linux to find the generating function of this recurrance equation.\
-Here is the generating function of our lineare recurrance function:
+I used the wolfram engine for Linux to find the generating function of this recurrence equation.
+Here is the generating function of our linear recurrence function:
 ```bash
 kourosh@irvm-69871:~/ctf/1$ wolframscript 
 Wolfram Language 13.0.1 Engine for Linux x86 (64-bit)
@@ -185,31 +187,30 @@ In[4]:= SeriesCoefficient[(-1 + 19*x + 340*x^2   - 8888*x^3)/(-1 + 21*x + 301*x^
 Out[4]= 23654235486457205901623901
 ```
 
-Ok we found a way to automate the direction calculation of the coeffiecient of sequences\
-Now we need to find the `20000000` sequence from above generating functin with this command
+Ok we found a way to automate the direct calculation of the coefficient of sequences.\
+Now we need to find the 20000000 sequences from the above generating function with this command
 ```bash
 In[4]:= SeriesCoefficient[(-1 + 19*x + 340*x^2   - 8888*x^3)/(-1 + 21*x + 301*x^2 - 9549*x^3 + 55692*x^4), {x, 0, 20000000}]
 ```
 But this also needs a lot of RAM space and it failed again\
-So I continued my studies again and I found a solution to directly extract the function which calculates the `nth` sequence of the linear recurrance function\
-This function will produce the `nth` sequence directly without looping\
-for example
+So I continued my studies again and I found a solution to directly extract the function which calculates the `nth` sequence of the linear recurrence function (`an`)\
+This function will produce the nth sequence directly without looping. for example:
 ```
 T(n) = 2*T(n-1) + 1
 The direct function of n will be
 f(n) = 2**n - 1 (Easy Huh?! But how to extract this function)
 ```
 
-To olve these linear recurrance function you can study this [PDF](https://www.math.cmu.edu/~af1p/Teaching/Combinatorics/Slides/Generating-Functions.pdf)\
-But fortunately wolfram has automate linear recurrance function solving platform which will extract this function [automatically](https://www.wolframalpha.com/input?i=f%28n%29%3D55692*f%28n-4%29+-+9549*f%28n-3%29+++301*f%28n-2%29+++21*f%28n-1%29%2C+f%281%29%3D1%2C+f%282%29%3D2%2C+f%283%29%3D3%2C+f%284%29%3D4)\
-And here is the direct solution to out linear recurrance function
+To solve these linear recurrence functions you can study this [PDF](https://www.math.cmu.edu/~af1p/Teaching/Combinatorics/Slides/Generating-Functions.pdf)\
+But fortunately, wolfram has automated linear recurrence function solving platform which will extract this function [automatically](https://www.wolframalpha.com/input?i=f%28n%29%3D55692*f%28n-4%29+-+9549*f%28n-3%29+++301*f%28n-2%29+++21*f%28n-1%29%2C+f%281%29%3D1%2C+f%282%29%3D2%2C+f%283%29%3D3%2C+f%284%29%3D4)\
+And here is the direct solution to our linear recurrence function:
 ```
          (-20956*(-21)**n) + 2792335*2**(2*n + 3)*(3**n) - (22739409*13**n) + (2279277*17**n)
 f(n) =	______________________________________________________________________________________
 									              11639628
 ```
 
-And here is the refined function with direct solution:
+And here is the refined function with a direct solution:
 ```py
 import hashlib
 import sys
@@ -248,7 +249,7 @@ kourosh@irvm-69871:~/ctf/1$ python3.9 solve.py
 picoCTF{b1g_numb3rs_689693c6}
 ```
 
-And here is the flag
+And here is the flag:
 ```
 picoCTF{b1g_numb3rs_689693c6}
 ```

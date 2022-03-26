@@ -52,7 +52,7 @@ with open('/home/kourosh/CTF/TMU/crypto/BabyEncoder/flag', 'rb') as f:
 
 # Solution
 
-This challenge really blowed my mind :')\
+This challenge really explode my mind :')\
 It has 4 custom encoding parts which are like below
 
 ## step 1
