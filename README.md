@@ -20,3 +20,8 @@
 [Very Smooth](PicoCTF2022/Cryptography/VerySmooth/)\
 [Sequences](PicoCTF2022/Cryptography/Sequences/)
 
+
+-----------------------------------------------------------------------------------------------------------------
+## Cyber Apocalypse CTF 2022
+### Crypto
+[The Three-Eyed-Oracle](Cyber-ApocalypseCTF2022/Crypto/The-Three-Eyed-Oracle/)
