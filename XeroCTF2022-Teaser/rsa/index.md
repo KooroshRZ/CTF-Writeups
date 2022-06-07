@@ -160,7 +160,7 @@ Ugupugu rejects decrypting flags
 
 # Solution
 We can encrypt any message we want and also we can decrypt as well except for the encrypted flag\
-RSA has a significant mathematical property named # [Homomorphic](https://crypto.stackexchange.com/questions/3555/homomorphic-cryptosystems-in-rsa)\
+RSA has a significant mathematical property named [Homomorphic](https://en.wikipedia.org/wiki/Homomorphism)\
 In case of RSA textbook without any padding we can abuse this property property. To be brief it says
 ```
 E(m1) = c1
@@ -172,7 +172,7 @@ E(m1.m2) = c1.c2
 ((m1.m2) ** e) % n = c1.c2
 ```
 
-Here is the scenario we will use
+Here is the scenario we will use according to this [link](https://crypto.stackexchange.com/questions/2323/how-does-a-chosen-plaintext-attack-on-rsa-work)
 0. We have `c1` which is encrypted flag and we want to compute `m1` which is flag
 1. We will encrypt a `\x02` message with decimal value of `2` and get `c2`
 2. multiply `c1` with `c2` modulus `n` and get `c1.c2 % n`
