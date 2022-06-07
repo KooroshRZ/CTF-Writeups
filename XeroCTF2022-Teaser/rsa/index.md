@@ -164,11 +164,11 @@ In case of RSA textbook without any padding we can abuse this property property.
 ```
 E(m1) = c1
 E(m2) = c2
-E(m1.m2) = c1.c2
+E(m1.m2) = E(m1).E(m2) = c1.c2
 
 (m1 ** e) % n = c1
 (m2 ** e) % n = c2
-((m1.m2) ** e) % n = c1.c2
+((m1.m2) ** e) % n = (m1 ** e).(m2 ** e) % n = c1.c2 % n
 ```
 
 Here is the scenario we will use according to this [link](https://crypto.stackexchange.com/questions/2323/how-does-a-chosen-plaintext-attack-on-rsa-work)
