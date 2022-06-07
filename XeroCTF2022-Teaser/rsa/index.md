@@ -130,7 +130,7 @@ def encrypt(m):
 	data = resp.content
 	return b64decode(data)
 
-c2 = bytes_to_long(encrypt("\x00"))
+c2 = bytes_to_long(encrypt("\x01"))
 print(c2)
 ```
 
