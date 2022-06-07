@@ -96,15 +96,15 @@ N: 18715011074845201888461791635367939553127268741525950569055646875583327021443
 
 
 ## sample encryption
-lets encrypt a message with decimal value of `0`
+Let's encrypt a message with decimal value of `0`
 
 ```py
-	def encrypt(m):
-		url = "https://ugupugu.roboepics.com/encrypt"
+def encrypt(m):
+	url = "https://ugupugu.roboepics.com/encrypt"
 
-		resp = requests.post(url, data=m)
-		data = resp.content
-		return b64decode(data)
+	resp = requests.post(url, data=m)
+	data = resp.content
+	return b64decode(data)
 
 c2 = bytes_to_long(encrypt("\x00"))
 print(c2)
@@ -123,13 +123,12 @@ m**e % n
 
 Let's try with value `1`
 ```py
-```py
-	def encrypt(m):
-		url = "https://ugupugu.roboepics.com/encrypt"
+def encrypt(m):
+	url = "https://ugupugu.roboepics.com/encrypt"
 
-		resp = requests.post(url, data=m)
-		data = resp.content
-		return b64decode(data)
+	resp = requests.post(url, data=m)
+	data = resp.content
+	return b64decode(data)
 
 c2 = bytes_to_long(encrypt("\x00"))
 print(c2)
